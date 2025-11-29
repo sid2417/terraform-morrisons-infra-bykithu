@@ -15,6 +15,7 @@ variable "common_tags" {
       Project = "morrisons"
       Environment = "Dev"
       Terraform = true
+      Component = "app-alb"
     }
 
   

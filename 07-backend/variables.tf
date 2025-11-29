@@ -13,7 +13,7 @@ variable "common_tags" {
     type = map(string)
     default = {
       Project = "morrisons"
-      Environment = "Dev"
+      Environment = "dev"
       Terraform = true
       Component = "backend"
     }

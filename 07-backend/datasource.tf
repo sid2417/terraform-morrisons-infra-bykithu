@@ -1,18 +1,23 @@
 data "aws_ssm_parameter" "backend_sg_id" {
-  # name = "/morrisons/dev/vpn_sg_id"
-    name = "/${var.project_name}/${var.environment}/vpn_sg_id"
-}
-
-
-data "aws_ssm_parameter" "vpc_id" {
-  # name = "/morrisons/dev/vpn_sg_id"
-    name = "/${var.project_name}/${var.environment}/vpc_id"
+  # name = "/morrisons/dev/backend_sg_id"
+    name = "/${var.project_name}/${var.environment}/backend_sg_id"
 }
 
 
 data "aws_ssm_parameter" "private_subnet_ids" {
-  # name = "/morrisons/dev/bastion_sg_id"
-    name = "/${var.project_name}/${var.environment}/public_subnet_ids"
+  # name = "/morrisons/dev/private_subnet_ids"
+    name = "/${var.project_name}/${var.environment}/private_subnet_ids"
+}
+
+
+data "aws_ssm_parameter" "vpc_id" {
+  # name = "/morrisons/dev/vpc_id"
+    name = "/${var.project_name}/${var.environment}/vpc_id"
+}
+
+data "aws_ssm_parameter" "app_alb_listener_http" {
+  # name = "/morrisons/dev/app_alb_listener_http"
+    name = "/${var.project_name}/${var.environment}/app_alb_listener_http"
 }
 
 

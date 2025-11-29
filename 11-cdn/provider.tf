@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket = "dev-morrisons-infra"
-    key    = "dev-morrisons-infra-acm-remotestate"
+    key    = "dev-morrisons-infra-cdn-remotestate"
     region = "us-east-1"
     dynamodb_table = "dev-morrisons-infra-locking"
   }

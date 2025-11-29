@@ -15,6 +15,7 @@ variable "common_tags" {
       Project = "morrisons"
       Environment = "Dev"
       Terraform = true
+      Component = "app-alb"
       
     }
 
@@ -26,11 +27,6 @@ variable "acm_tags" {
     default = {}
 }
 
-variable "public_key_path" {
-    type = string
-    description = "Path to SSH public key"
-    default     = "C:/Users/SIDDHARTHA/Desktop/DevOps/newkeys/kithu.pub"
-}
 
 
 variable "zone_name" {

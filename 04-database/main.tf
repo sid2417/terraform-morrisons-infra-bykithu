@@ -65,7 +65,7 @@ module "db" {
 }
 
 
-
+# create R53 record for RDS endpoint
 
 module "records" {
   source  = "terraform-aws-modules/route53/aws//modules/records"

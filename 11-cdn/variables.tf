@@ -13,23 +13,25 @@ variable "common_tags" {
     type = map(string)
     default = {
       Project = "morrisons"
-      Environment = "Dev"
+      Environment = "dev"
       Terraform = true
+      Component = "cdn"
     }
 
   
 }
 
-variable "vpn_tags" {
+variable "cdn_tags" {
     type = map(string)
     default = {}
 }
 
-# variable "public_key_path" {
-#     type = string
-#     description = "Path to SSH public key"
-#     default     = "C:/Users/SIDDHARTHA/Desktop/DevOps/newkeys/kithu.pub"
-# }
 
+
+variable "zone_name" {
+    type = string
+    default = "kithusdairy.fun"
+  
+}
 
 

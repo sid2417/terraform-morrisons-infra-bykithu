@@ -3,7 +3,7 @@ resource "aws_lb" "app_alb" {
   internal           = true
   load_balancer_type = "application"
   security_groups    = [data.aws_ssm_parameter.app_alb_sg_id.value]
-  subnets            = split(",",data.aws_ssm_parameter.public_subnet_ids.value) 
+  subnets            = split(",",data.aws_ssm_parameter.private_subnet_ids.value) 
 
   enable_deletion_protection = false
 
@@ -16,8 +16,8 @@ resource "aws_lb" "app_alb" {
 
 
 
-resource "aws_lb_listener" "app-alb" {
-  load_balancer_arn = data.aws_ssm_parameter.app_alb_listener_arn.value
+resource "aws_lb_listener" "app_alb_listener_http" {
+  load_balancer_arn = aws_lb.app_alb.arn
   # this will work but ssm-parameter and datasource we mention in the same repo becoz of time abiguity datasource not loading
   # it means while storing the value in the ssm-parametrer before only datasource is try to catch the value, so it will not detect the value, we got error
   #load_balancer_arn = aws_lb.app_alb.arn

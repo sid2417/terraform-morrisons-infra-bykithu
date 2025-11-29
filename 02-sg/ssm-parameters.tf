@@ -47,3 +47,12 @@ resource "aws_ssm_parameter" "app_alb_sg_id" {
   value = module.app_alb.sg_id 
   overwrite = true 
 }
+
+
+resource "aws_ssm_parameter" "web_alb_sg_id" {
+  name = "/${var.project_name}/${var.environment}/web_alb_sg_id"
+  description = "Stores web_alb_sg_id for use in other modules"
+  type  = "String"
+  value = module.web_alb.sg_id 
+  overwrite = true 
+}
