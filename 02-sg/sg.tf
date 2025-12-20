@@ -306,6 +306,17 @@ resource "aws_security_group_rule" "bastion_public" {
 }
 
 
+## Tools (This is adding as a part of jenkins cicd)
+# Backend is accepting connections from default_vpc
+resource "aws_security_group_rule" "backend_default_vpc" {
+  type              = "ingress"
+  from_port         = 22
+  to_port           = 22
+  protocol          = "tcp"
+  cidr_blocks = ["172.31.0.0/16"] # here generally we mention our home ip address
+  security_group_id = module.backend.sg_id
+}
+
 
 
 # # Frontend is accepting connections from public
